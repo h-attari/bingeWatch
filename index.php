@@ -41,9 +41,7 @@
 	</head>
 	<body>
 
-		<header class="jumbotron"></header>
-
-		<main class="container">
+		<main class="container my-5">
 			<div class="row justify-content-center">
 				<div class="card col-10 col-lg-5">
 					<div class="card-header row">
@@ -73,8 +71,8 @@
 								<input type="password" name="password" class="col-12 col-lg-9 form-control" required />
 							</div>
 							<div class="form-group row">
-								<button type="submit" class="form-control btn btn-primary col-3 ml-auto">Submit</button>
-								<button type="reset" class="form-control btn btn-secondary col-3 ml-1">Cancel</button>
+								<button type="submit" class="form-control btn btn-primary col-4 col-md-3 ml-auto">Submit</button>
+								<button type="reset" class="form-control btn btn-secondary col-4 col-md-3 ml-1">Cancel</button>
 							</div>
 						</form>
 					</div>

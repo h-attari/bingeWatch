@@ -1,0 +1,45 @@
+*{
+	color: floralwhite;
+}
+
+body{
+	background: url("../images/movieBg.jpg") no-repeat;
+	background-size: cover;
+}
+
+.card{
+	background: rgba(200, 200, 200, 0.5);
+}
+
+.card-header{
+	background: rgba(100, 100, 100, 0.7);
+}
+
+.main{
+	margin-top: 7rem;
+}
+
+a{
+	color: floralwhite;
+	text-decoration: none;
+}
+
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active{
+	background: rgba(255, 255, 255, 0.3);
+	color: black;
+	font-weight: bold;
+}
+
+a:hover{
+	color: floralwhite;
+	font-style: italic;
+	text-decoration: none;
+}
+
+.close span{
+	color: floralwhite;
+}
+
+tr{
+	background-color: rgba(0, 0, 0, 0.5);
+}

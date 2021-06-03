@@ -8,6 +8,13 @@
 			$stmt = $pdo -> prepare($sql);
 			$stmt -> execute(array(':mid' => $id));
 		}
+		else if(strpos($_POST['delete'], 'srs') !== false){
+			$id = str_replace('srs', '', $_POST['delete']);
+			$sql = "DELETE from series where id=:sid";
+			$stmt = $pdo -> prepare($sql);
+			$stmt -> execute(array(':sid' => $id));
+		}
+
 		header("Location: watch.php");
 		return;
 	}

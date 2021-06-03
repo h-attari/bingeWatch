@@ -26,11 +26,11 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
-	<link rel="stylesheet" type="text/css" href="css/watch.css">
+	<link rel="stylesheet" type="text/css" href="css/index.css">
 </head>
 <body>
 
-	<nav class="navbar navbar-light navbar-expand-sm fixed-top">
+	<nav class="navbar navbar-dark navbar-expand-sm fixed-top">
 		<div class="nav navbar-nav mr-auto">
 			<i class="nav-item nav-link h4">Welcome Beast !!</i>
 		</div>
@@ -39,9 +39,7 @@
 		</div>
 	</nav>
 
-	<header class="jumbotron"></header>
-
-	<main class="container">
+	<main class="container main">
 		<div class="row">
 			<div class="col-12">
 				<ul class="nav nav-tabs nav-justified" role="tablist">
@@ -89,7 +87,7 @@
 															<td class="col-3 col-md-2 text-center">
 																<form method="POST" action="downloaded.php">
 																	<div class="form-check">
-																		<input type="checkbox" name="download" value='.$id.' class="form-check-input" onclick="if(this.checked){this.form.submit()}">
+																		<input type="checkbox" name="download" value='.$id.' class="form-check-input" '.($movie["isDownloaded"]?'checked="checked"':"").' onclick="this.form.submit()">
 																	</div>
 																</form>
 															</td>
@@ -124,7 +122,8 @@
 									<table class="table table-hover">
 										<thead class="thead-dark">
 											<tr class="row">
-												<th class="col-11">Name</th>
+												<th class="col-8 col-md-9">Name</th>
+												<th class="col-3 col-md-2 text-center">Rewatch</th>
 												<th class="col-1"></th>
 											</tr>
 										</thead>
@@ -134,7 +133,14 @@
 													if($movie['isWatched']){
 														$id = "movie".$movie['id'];
 														echo('<tr class="row">
-															<td class="col-11"><s>'.htmlentities($movie["name"]).'</s></td>
+															<td class="col-8 col-md-9"><s>'.htmlentities($movie["name"]).'</s></td>
+															<td class="col-3 col-md-2 text-center">
+																<form method="POST" action="watched.php">
+																	<div class="form-check">
+																		<input type="checkbox" name="watch" value='.$id.' class="form-check-input" onclick="if(this.checked){this.form.submit()}">
+																	</div>
+																</form>
+															</td>
 															<td class="col-1">
 																<form method="POST" action="delete.php">
 																	<button type="submit" class="close" aria-label="Delete" name="delete" value='.$id.'>
@@ -161,7 +167,7 @@
 								<div class="col-12 mt-5">
 									<form method="POST" action="add.php">
 										<div class="input-group row justify-content-center">
-											<input type="text" name="movie" class="form-control col-8 col-md-7" placeholder="Add Series" required>
+											<input type="text" name="series" class="form-control col-8 col-md-7" placeholder="Add Series" required>
 											<button type="submit" class="form-control btn btn-dark col-2 col-md-1">Add</button>
 										</div>
 									</form>
@@ -224,7 +230,8 @@
 									<table class="table table-hover">
 										<thead class="thead-dark">
 											<tr class="row">
-												<th class="col-11">Name</th>
+												<th class="col-8 col-md-9">Name</th>
+												<th class="col-3 col-md-2 text-center">Rewatch</th>
 												<th class="col-1"></th>
 											</tr>
 										</thead>
@@ -234,7 +241,14 @@
 													if($srs['isWatched']){
 														$id = "srs".$srs['id'];
 														echo('<tr class="row">
-															<td class="col-11"><s>'.htmlentities($srs["name"]).'</s></td>
+															<td class="col-8 col-md-9"><s>'.htmlentities($srs["name"]).'</s></td>
+															<td class="col-3 col-md-2 text-center">
+																<form method="POST" action="watched.php">
+																	<div class="form-check">
+																		<input type="checkbox" name="watch" value='.$id.' class="form-check-input" onclick="if(this.checked){this.form.submit()}">
+																	</div>
+																</form>
+															</td>
 															<td class="col-1">
 																<form method="POST" action="delete.php">
 																	<button type="submit" class="close" aria-label="Delete" name="delete" value='.$id.'>
