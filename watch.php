@@ -88,6 +88,7 @@
 																<form method="POST" action="downloaded.php">
 																	<div class="form-check">
 																		<input type="checkbox" name="download" value='.$id.' class="form-check-input" '.($movie["isDownloaded"]?'checked="checked"':"").' onclick="this.form.submit()">
+																		<input type="checkbox" name="default" value="-'.$id.'" class="form-check-input d-none" checked>
 																	</div>
 																</form>
 															</td>
@@ -195,7 +196,8 @@
 															<td class="col-3 col-md-2 text-center">
 																<form method="POST" action="downloaded.php">
 																	<div class="form-check">
-																		<input type="checkbox" name="download" value='.$id.' class="form-check-input" onclick="if(this.checked){this.form.submit()}">
+																		<input type="checkbox" name="download" '.($srs["isDownloaded"]?'checked="checked"':"").' value='.$id.' class="form-check-input" onclick="this.form.submit()">
+																		<input type="checkbox" name="default" value="-'.$id.'" class="form-check-input d-none" checked>
 																	</div>
 																</form>
 															</td>
