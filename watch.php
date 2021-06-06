@@ -2,11 +2,13 @@
 	session_start();
 	require_once('cdns.php');
 	require_once('pdo.php');
+	$user = "";
 	if(!isset($_SESSION['user']))
 	{
 		header("Location: index.php");
 		return;
 	}
+	$user = $_SESSION['user'];
 	$sql = "select * from movies";
 	$stmt = $pdo -> prepare($sql);
 	$stmt -> execute();
@@ -23,6 +25,7 @@
 <html>
 <head>
 	<title>Binging</title>
+	<link rel="icon" type="image/icon" href="./images/titleLogo.png">
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -32,7 +35,7 @@
 
 	<nav class="navbar navbar-dark navbar-expand-sm fixed-top">
 		<div class="nav navbar-nav mr-auto">
-			<i class="nav-item nav-link h4">Welcome Beast !!</i>
+			<i class="nav-item nav-link h4">Welcome <?= ucfirst($user) ?> !!</i>
 		</div>
 		<div class="nav navbar-nav ml-auto">
 			<a href="logout.php" class="nav-item nav-link h6">Logout</a>
